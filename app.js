@@ -1,14 +1,26 @@
 var express = require('express');
 var path = require('path');
+var fs = require('fs');
+var request = require('request');
+var cheerio = require('cheerio');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var freelancerrouter = require('./routes/freelancerrouter.js');
 var app = express();
+var mongodb = require('mongodb');
+var url = "mongodb://localhost:27017/lnmhacks";
+mongodb.Promise = global.Promise;
+mongoose.connect(url);
+var db = mongoose.connection;
+db.on('error',console.error.bind(console,'Connection Error: '));
+db.once('open',function(err,dish){
+  console.log('We are connected to the database!');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/freelancer',freelancerrouter);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -30,6 +43,7 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
+
 
 /// error handlers
 
