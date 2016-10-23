@@ -1372,7 +1372,7 @@ a.text-danger:focus {
   color: #843534;
 }
 .bg-primary {
-  color: #fff;
+  color: #000;
   background-color: #337ab7;
 }
 a.bg-primary:hover,
@@ -5459,6 +5459,8 @@ button.list-group-item-danger.active:focus {
   padding: 15px;
 }
 .panel-heading {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  text-transform: uppercase;
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-left-radius: 3px;
@@ -5970,21 +5972,27 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: auto;
-    margin: 80px auto;
+    width: 600px;
+    margin: 30px auto;
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
             box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
   }
   .modal-sm {
-    width: 400px;
+    width: 300px;
   }
 }
 @media (min-width: 992px) {
+  .modal-lgm {
+    margin-top: 50px;
+    width: 750px;
+  }
+}  
+@media (min-width: 1500px) {
   .modal-lg {
     width: 900px;
-  }
+  } 
 }
 .tooltip {
   position: absolute;
