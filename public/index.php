@@ -1,29 +1,27 @@
 <?php
-
     session_start();
-
     if($_SERVER["REQUEST_METHOD"]=="POST"){
 
             // The data to send to the API
 
-            $freelancer=real_escape_string($_POST['freelancer']);
+            $freelancer=$_POST['freelancer'];
 
             $postData = array(
                 'url' => $freelancer
             );
-
+            echo $freelancer;
             // Create the context for the request
             $context = stream_context_create(array(
                 'http' => array(
-                  
-                    'method' => 'POST',     
+
+                    'method' => 'POST',
                     'content' => json_encode($postData)
                 )
             ));
-
+		echo $postata;
             // Send the request
-            $response = file_get_contents('localhost:8000/freelancer/posts/',$context);
-
+            $response = file_get_contents('localhost:8080/freelancer',$context);
+            echo $response;
             // Check for errors
             if($response === FALSE){
                 die('API replyed nothing');
@@ -39,14 +37,9 @@
 
             $_SESSION['freelancer_location']=$responseData['location'];
 
+            //header("location: profile.php");
 
 
-
-
-
-            header("location: profile.php");
-
-            
 
     }
 
@@ -184,7 +177,7 @@
                     <div class="service-box">
                         <div class="circular1">
                              <img src="img/2.jpg" width="140px" height="140px"/>
-                        </div> 
+                        </div>
                         <h3>Ayush Singh</h3>
                         <p class="text-muted">Our Web Designer</p>
                     </div>
