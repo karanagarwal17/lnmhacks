@@ -17,21 +17,20 @@
 
     <title>User Profile</title>
 
-   
+
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-    
+
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    
+
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-   
-    <link href="css/style.css" rel="stylesheet">
 
-    
+    <link href="css/style.css" rel="stylesheet">
+</script>
 
 </head>
 
@@ -53,7 +52,7 @@
                     <li>
                         <a class="page-scroll" href="index.html">Home</a>
                     </li>
-                    
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -70,7 +69,7 @@
                             <div class="panel-body">
                             <center>
                             <img src="http://i.imgur.com/JS090UT.jpg" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                    
+
                          </center>
                          <hr>
                             <center>
@@ -96,12 +95,12 @@
                             <p class="project3"><strong>Project 3:</strong><br>
                         Did this and that!</p>
                             <p class="project4"><strong>Project 4:</strong><br>
-                        Did this and that!</p>                    
+                        Did this and that!</p>
                             </center>
                         </div>
       </div>
     </div>
-           
+
                   <div class="col-md-6">
       <div class="panel panel-default">
        <div class="panel-heading"><center><strong>Skills</strong></center></div>
@@ -113,10 +112,10 @@
                         <span class="skill4">HTML/CSS<br></span><br>
                     </center></div>
       </div>
-      </div>  
+      </div>
     <div class="panel panel-default">
        <div class="panel-heading"><center><strong>Reviews:</strong></center></div>
-       <div class="panel-body">      
+       <div class="panel-body">
                     <hr>
                     <p class="pr1"><strong>Review 1:</strong><br>
                         This guy's awesome.</p>
@@ -130,7 +129,7 @@
                     <br>
                     </div>
       </div>
-</section>  
+</section>
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
