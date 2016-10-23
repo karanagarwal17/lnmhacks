@@ -4,14 +4,6 @@
 ?>
 
 
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,26 +17,21 @@
 
     <title>User Profile</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
+    
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    <!-- Plugin CSS -->
+    
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-    <!-- Theme CSS -->
-    <link href="css/creative.css" rel="stylesheet">
+   
+    <link href="css/style.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
 
 </head>
 
@@ -64,7 +51,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="index.html">HOME</a>
+                        <a class="page-scroll" href="index.html">Home</a>
                     </li>
                     
                 </ul>
@@ -74,85 +61,76 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header>
-        <div class="header-content">
-           <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title" id="myModalLabel">Basic Info</h4>
-                    </div>
-                <div class="modal-body">
-                    <center>
-                    <img src="http://i.imgur.com/JS090UT.jpg" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                    <h3 class="media-heading"><?php $_SESSION['freelancer_name'] ?> <div class="location"><small> <?php $_SESSION['freelancer_location']  ?> </small></div></h3>
-                    <span><strong>Skills: </strong></span>
-                        <span class="label label-warning">Photoshop</span>
-                        <span class="label label-info">Adobe Premiere</span>
-                        <span class="label label-info">After Effects</span>
-                        <span class="label label-success">HTML/CSS</span>
-                    </center>
-                    <hr>
-                    <center>
-                    <p class="text-left"><strong>Bio: </strong><br>
+    <section class="bg-primary">
+            <div class="container">
+               <div class="row">
+                    <div class="col-md-6">
+                         <div class="panel panel-default">
+                            <div class="panel-heading"><strong><center>Basic Info</strong></center></div>
+                            <div class="panel-body">
+                            <center>
+                            <img src="http://i.imgur.com/JS090UT.jpg" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                    
+                         </center>
+                         <hr>
+                            <center>
+                            <h3 class="media-heading"><?php $_SESSION['freelancer_name'] ?> <small><?php $_SESSION['freelancer_location']  ?></small></h3>
+                            <p class="bio"><strong>Bio:</strong><br>
                         I do a little bit of everything.</p>
-
-                    <p class="text-left"><strong>Rating: </strong><br>
+                            <p class="rating"><strong>Rating:</strong><br>
                         <?php echo $_SESSION['freelancer_rating']  ?></p>
+                            <p class="rate"><strong>Rate:</strong><br>
+                        <?php $_SESSION['freelancer_rate'] ?></p>
+                            <p class="recommendation"><strong>Recommendations:</strong><br>
+                        Some recommendation score goes here.</p></center></div>
+      </div>
 
-                    <p class="text-left"><strong>Rate: </strong><br>
-                       <?php $_SESSION['freelancer_rate'] ?> </p>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><center><strong>Projects:</strong></center></div>
+                            <div class="panel-body">
+                            <center>
+                            <p class="project1"><strong>Project 1:</strong><br>
+                        Did this and that!</p>
+                            <p class="project2"><strong>Project 2:</strong><br>
+                        Did this and that!</p>
+                            <p class="project3"><strong>Project 3:</strong><br>
+                        Did this and that!</p>
+                            <p class="project4"><strong>Project 4:</strong><br>
+                        Did this and that!</p>                    
+                            </center>
+                        </div>
+      </div>
+    </div>
+           
+                  <div class="col-md-6">
+      <div class="panel panel-default">
+       <div class="panel-heading"><center><strong>Skills</strong></center></div>
+       <div class="panel-body"><span>
+        <div class="skills">
+                        <span class="skill1">Photoshop<br></span><br>
+                        <span class="skill2">Adobe Premiere<br></span><br>
+                        <span class="skill3">After Effects<br></span><br>
+                        <span class="skill4">HTML/CSS<br></span><br>
+                    </center></div>
+      </div>
+      </div>  
+    <div class="panel panel-default">
+       <div class="panel-heading"><center><strong>Reviews:</strong></center></div>
+       <div class="panel-body">      
+                    <hr>
+                    <p class="pr1"><strong>Review 1:</strong><br>
+                        This guy's awesome.</p>
+                    <p class="pr2"><strong>Review 2:</strong><br>
+                        This guy's awesome.</p>
+                    <p class="pr3"><strong>Review 3:</strong><br>
+                        This guy's awesome.</p>
+                    <p class="pr4"><strong>Review 4:</strong><br>
+                        This guy's awesome.</p>
 
-                    <p class="text-left"><strong>Recommendations: </strong><br>
-                        Some score goes here.</p>
-                   
                     <br>
-                    </center>
-                </div>
-                   </div>
-        </div> 
-        </div>
-    </header>
-
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-               <div class="col-sm-6">
-                    <div class="header-content">
-                        <div class="modal-dialog">
-                            <div class="modal-content modal-sm">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                    <h4 class="modal-title" id="myModalLabel">Reviews</h4>
-                                </div>
-                                 <div class="modal-body">
-                                    <p class="text-left">Reviews are fetched here!!<p>
-                                </div>
-                             </div>
-                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="header-content">
-                        <div class="modal-dialog">
-                            <div class="modal-content modal-sm">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                    <h4 class="modal-title" id="myModalLabel">Reviews</h4>
-                                </div>
-                                 <div class="modal-body">
-                                    <p class="text-left">Reviews are fetched here!!<p>
-                                </div>
-                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    
+      </div>
+</section>  
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>

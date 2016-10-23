@@ -55,11 +55,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,7 +80,8 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -105,7 +101,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Profile Mash</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -130,10 +126,10 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
+                <h1 id="homeHeading">All your freelance profiles collected at one place.</h1>
                 <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <p>Profile Mash allows you to fetch information from your various freelance network profiles and presents it all in an organized manner.</p>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Get Started!</a>
             </div>
         </div>
     </header>
@@ -142,12 +138,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
+                <div class="mashingup">
                     <h2 class="section-heading">Enter your profile links here</h2>
                     <hr class="light">
+                    <div class="websites">
                     <p class="text-faded">
-                       
-                        <form class="form" method="POST" action="#">
-
+                       <form class="form" method="POST" action="#">
                             <label for="freelancer">FreeLancer</label><br>
                                 <input type="text" id="freelancer" name="freelancer"><br>
                             <label for="site 2">Site 2</label><br>
@@ -156,10 +152,9 @@
                                 <input type="text" id="site 3" name="site 3"><br>
                             <label for="site 4">Site 4</label><br>
                                 <input type="text" id="site 4" name="site 4">
-
-                        </form>
+                                   <center><button type="submit" class="page-scroll btn btn-default btn-xl sr-button">Mash It Up!</button></center>
+                          </form>
                     </p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Mash It Up!</a>
                 </div>
             </div>
         </div>
