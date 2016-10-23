@@ -10,12 +10,19 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var freelancerrouter = require('./routes/freelancerrouter.js');
+var toptalrouter = require('./routes/toptalrouter.js');
 var app = express();
+var phpExpress = require('php-express')({
+
+  // assumes php is in your PATH
+  binPath: '/usr/bin/php'
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
+app.engine('php',phpExpress.engine);
+app.set('view engine', 'php');
+app.all(/.+\.php$/, phpExpress.router);
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -26,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/freelancer',freelancerrouter);
+app.use('/toptal',toptalrouter);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
