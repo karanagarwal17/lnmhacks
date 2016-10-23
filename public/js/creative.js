@@ -9,7 +9,7 @@
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
     });
-
+    //$('.page-scroll btn btn-default btn-xl sr-button').setTimeout(10000);
     // Highlight the top nav as scrolling occurs
     $('body').scrollspy({
         target: '.navbar-fixed-top',
