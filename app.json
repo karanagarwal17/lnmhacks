@@ -1,0 +1,6 @@
+{
+  "name": "Profile Mash",
+  "description": "A Node.Js app to build cumulative freelancing profiles",
+  "repository": "https://github.com/karanagarwal17/profile-mash.git",
+  "keywords": ["node","express","web-scrapping","freelancing"]
+}
