@@ -19,7 +19,7 @@ freelancerrouter.route('/')
 })*/
 .post(function(req,res,next){
     var url = req.body.url;
-  //var url = 'https://www.freelancer.com/u/DezineGeek.html';
+    //var url = 'https://www.freelancer.com/u/DezineGeek.html';
     request(url,function(err,response,html){
       var $ = cheerio.load(html);
       $(this).remove('span.online-text');
@@ -56,7 +56,7 @@ freelancerrouter.route('/')
                     skill = $(this).last().text().replace(/\s\s+/g, ' ').split(" ",20).slice(1,20);
                   });
                   var skill1 = "",skills = new Array(0);
-                  for(var i = 0,j = 0; j < 6; i++){
+                  for(var i = 0,j = 0; j < 4; i++){
                     if(skill[i].isNumber()){
                       skills.push(skill1);
                       skill1 = "";
