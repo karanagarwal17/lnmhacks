@@ -5,13 +5,14 @@ var morgan = require('morgan');
 var request = require('request');
 var cheerio = require('cheerio');
 var name, description, rating, rate, location, skills = new Array(),
-	recommendations, reviews = new Array(),
+	reviews = new Array(),
 	responsedata;
 String.prototype.isNumber = function() {
 	return /^\d+$/.test(this);
 }
 
 var freelancer = function(url, callback) {
+	if(!url) callback();
 	//var url = 'https://www.freelancer.com/u/DezineGeek.html';
 	request(url, function(err, response, html) {
 		var $ = cheerio.load(html, {
@@ -42,51 +43,44 @@ var freelancer = function(url, callback) {
 							location = location1 + ", " + location2;
 							console.log(location);
 
-							$('div.profile-recommendation').filter(function() {
-								recommendations = $(this).text().trim();
-								recommendations = recommendations.substr(0, recommendations.indexOf(" ")).trim();
-								console.log(recommendations);
+							$('.VerificationsList').last().children('li').each(function(i, elem) {
+								skills[i] = $(this).children('span').first().children('a').text().trim();
 
-								$('.VerificationsList').last().children('li').each(function(i, elem) {
-									skills[i] = $(this).children('span').first().children('a').text().trim();
-
-									if(i > 3)
+								if (i > 3)
 									return false;
-								});
-								console.log(skills);
-
-								$('.user-review-title').each(function(i, elem) {
-									reviewtitle = $(this).text().trim();
-									reviewrating = $(this).parent().children('.Rating').attr('data-star_rating');
-									reviewprice = $(this).parent().children('.user-review-price').text();
-									reviewcomment = $(this).parent().children('p').text();
-									reviewauthor = $(this).parent().children('.user-review-details').text().trim();
-									reviewauthor = reviewauthor.substr(0, reviewauthor.indexOf(" ")).replace(/(\r\n|\n|\r)/gm, "");;
-									var newreview = {
-										"title": reviewtitle,
-										"rating": reviewrating,
-										"price": reviewprice,
-										"comment": reviewcomment,
-										"author": reviewauthor
-									};
-									reviews.push(newreview);
-
-									if (i > 3)
-										return false;
-								});
-								console.log(reviews);
-								responsedata = {
-									"name": name,
-									"description": description,
-									"rating": rating,
-									"rate": rate,
-									"location": location,
-									"recommendations": recommendations,
-									"skills": skills,
-									"reviews": reviews
-								};
-								callback(responsedata);
 							});
+							console.log(skills);
+
+							$('.user-review-title').each(function(i, elem) {
+								reviewtitle = $(this).text().trim();
+								reviewrating = $(this).parent().children('.Rating').attr('data-star_rating');
+								reviewprice = $(this).parent().children('.user-review-price').text();
+								reviewcomment = $(this).parent().children('p').text();
+								reviewauthor = $(this).parent().children('.user-review-details').text().trim();
+								reviewauthor = reviewauthor.substr(0, reviewauthor.indexOf(" ")).replace(/(\r\n|\n|\r)/gm, "");;
+								var newreview = {
+									"title": reviewtitle,
+									"rating": reviewrating,
+									"price": reviewprice,
+									"comment": reviewcomment,
+									"author": reviewauthor
+								};
+								reviews.push(newreview);
+
+								if (i > 3)
+									return false;
+							});
+							console.log(reviews);
+							responsedata = {
+								"name": name,
+								"description": description,
+								"rating": rating,
+								"rate": rate,
+								"location": location,
+								"skills": skills,
+								"reviews": reviews
+							};
+							callback(responsedata);
 						});
 					});
 				});

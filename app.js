@@ -17,6 +17,7 @@ var scraper = require('./routes/scraper');
 app.set('views', path.join(__dirname, 'views'));
 app.use(favicon());
 app.use(logger('dev'));
+app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
