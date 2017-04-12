@@ -1,0 +1,15 @@
+{
+  "name": "Profile Mash",
+  "description": "Webapp to display a cumulative freelancing profile",
+  "main": "",
+  "authors": [
+    "karanagarwal17 <karanagarwal1702@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/karanagarwal17/profile-mash",
+  "dependencies": {
+    "angular-resource": "~1.4.8",
+    "angular-ui-router": "^0.4.2",
+    "angular": "^1.6.4"
+  }
+}
